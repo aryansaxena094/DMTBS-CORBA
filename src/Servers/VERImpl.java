@@ -44,8 +44,6 @@ public class VERImpl extends ServerSide.ServerPOA{
     static int VER_ALONP = 4007;
     static int VER_DATA = 4008;
     
-    
-    
     //addadmin
     @Override
     public String verifyMovieID(String movieID) {
