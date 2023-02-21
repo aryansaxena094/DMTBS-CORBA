@@ -7,7 +7,7 @@ import org.omg.PortableServer.POAHelper;
 import ServerSide.Server;
 import ServerSide.ServerHelper;
 
-public class Calserv {
+public class ATWserv {
     public static void main(String[] args) {
        try {
         ORB orb = ORB.init(args, null);
@@ -16,7 +16,7 @@ public class Calserv {
 
         rootpoa.the_POAManager().activate();
 
-        Atwater serv1 = new Atwater();
+        ATWImpl serv1 = new ATWImpl();
         serv1.setOrb(orb);
         
         org.omg.CORBA.Object ref = rootpoa.servant_to_reference(serv1);
@@ -24,14 +24,6 @@ public class Calserv {
 
         org.omg.CORBA.Object objref = orb.resolve_initial_references("Naming Service");
         
-
-
-
-
-
-
-
-
 
 
 

@@ -4,7 +4,7 @@ import org.omg.CORBA.ORB;
 
 import ServerSide.ServerPOA;
 
-public class Atwater extends ServerPOA{
+public class ATWImpl extends ServerPOA{
 
     private ORB orb;
      
