@@ -65,7 +65,6 @@ public class Client {
       System.out.println("Hey Client?!");
       
       //lessgo
-      
       program:while(true){
         String verification = "This entered ID is invalid";
         
@@ -446,7 +445,7 @@ public class Client {
     Date date = new Date();
     String dateStr = dateFormat.format(date);
     String timeStr = timeFormat.format(date);
-    String logFilePath = "/Users/aryansaxena/Desktop/DSD/DSDA1/DMTBS/logs/ClientSide"+dateStr+".txt";
+    String logFilePath = "/Users/aryansaxena/Desktop/DSD/DSDA2/CORBADMTBS/logs/ClientSide"+dateStr+".txt";
     File logFile = new File(logFilePath);
     String logMessage = "DATE: "+ dateStr + " | " + "TIME: " + timeStr + " | " + "REQUEST TYPE: " + requesttype + " | " + ID + " | " + "STATUS: "+(status ? "success" : "failure");
     try {
