@@ -51,5 +51,17 @@ public class OUTImpl extends ServerPOA{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'cancelMovieTickets'");
     }
+
+    @Override
+    public String verifyID(String ID) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'verifyID'");
+    }
+
+    @Override
+    public void serverlogwriter(String requesttype, String ID, boolean status) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'serverlogwriter'");
+    }
     
 }
