@@ -12,13 +12,13 @@ public class Client {
         Scanner sc = new Scanner(System.in);
           try {
             ORB orbATW = ORB.init(args, null);
-            org.omg.CORBA.Object ATWRef = orbATW.resolve_initial_references("NameService");
-            NamingContextExt ncRef = NamingContextExtHelper.narrow(ATWRef);
+            org.omg.CORBA.Object ref = orbATW.resolve_initial_references("NameService");
+            NamingContextExt ncRef = NamingContextExtHelper.narrow(ref);
             Server atwaterserv = ServerHelper.narrow(ncRef.resolve_str("ATW"));
-            System.out.println("Hello From the system");
+            Server verdunserv = ServerHelper.narrow(ncRef.resolve_str("VER"));
+            Server outserv = ServerHelper.narrow(ncRef.resolve_str("OUT"));
 
-
-
+            System.out.println("Hey Client?!");
 
 
 
