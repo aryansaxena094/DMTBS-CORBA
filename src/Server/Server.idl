@@ -1,0 +1,14 @@
+module ServerSide{
+     interface Server{
+     string verifyMovieID(in string movieID);
+     string addMovieSlots(in string movieID ,in string movieName,in long bookingcapacity);
+     string removeMovieSlots(in string movieID ,in string movieName);
+     string listMovieShows(in string movieName);
+
+     string addadmin(in string adminID);
+
+     string bookMovieTicket(in string CustomerID ,in string movieID, in string movieName, in long Numberoftickets);
+     string getBookingSchedule(in string CustomerID);
+     string cancelMovieTickets(in string CustomerID, in string movieID , in string movieName, in long Numberoftickets);
+     };
+};
