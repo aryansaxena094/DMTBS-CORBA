@@ -22,7 +22,7 @@ public class OUTserv {
 
         rootpoa.the_POAManager().activate();
 
-        ATWImpl serv1 = new ATWImpl();
+        OUTImpl serv1 = new OUTImpl();
         serv1.setOrb(orb);
         
         org.omg.CORBA.Object ref = rootpoa.servant_to_reference(serv1);

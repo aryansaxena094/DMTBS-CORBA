@@ -22,7 +22,7 @@ public class VERserv {
 
         rootpoa.the_POAManager().activate();
 
-        ATWImpl serv1 = new ATWImpl();
+        VERImpl serv1 = new VERImpl();
         serv1.setOrb(orb);
         
         org.omg.CORBA.Object ref = rootpoa.servant_to_reference(serv1);

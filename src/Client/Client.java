@@ -55,12 +55,19 @@ public class Client {
     String ID = "";
     
     try {
-      ORB orbATW = ORB.init(args, null);
-      org.omg.CORBA.Object ref = orbATW.resolve_initial_references("NameService");
-      NamingContextExt ncRef = NamingContextExtHelper.narrow(ref);
-      Server servATW = ServerHelper.narrow(ncRef.resolve_str("ATW"));
-      Server servVER = ServerHelper.narrow(ncRef.resolve_str("VER"));
-      Server servOUT = ServerHelper.narrow(ncRef.resolve_str("OUT"));
+      ORB orb = ORB.init(args, null);
+
+      org.omg.CORBA.Object ATWref = orb.resolve_initial_references("NameService");
+      NamingContextExt ref1 = NamingContextExtHelper.narrow(ATWref);
+      Server servATW = ServerHelper.narrow(ref1.resolve_str("ATW"));
+
+      org.omg.CORBA.Object VERref = orb.resolve_initial_references("NameService");
+      NamingContextExt ref2 = NamingContextExtHelper.narrow(VERref);
+      Server servVER = ServerHelper.narrow(ref2.resolve_str("VER"));
+
+      org.omg.CORBA.Object OUTref = orb.resolve_initial_references("NameService");
+      NamingContextExt ref3 = NamingContextExtHelper.narrow(OUTref);
+      Server servOUT = ServerHelper.narrow(ref3.resolve_str("OUT"));
       
       System.out.println("Hey Client?!");
       
