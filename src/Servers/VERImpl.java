@@ -325,7 +325,7 @@ public class VERImpl extends ServerSide.ServerPOA{
                                     Date date = new Date();
                                     String dateStr = dateFormat.format(date);
                                     String timeStr = timeFormat.format(date);
-                                    String logFilePath = "/Users/aryansaxena/Desktop/DSD/DSDA1/DMTBS/logs/Verdun/VER.txt";
+                                    String logFilePath = "/Users/aryansaxena/Desktop/DSD/DSDA2/CORBADMTBS/logs/Verdun/VER.txt";
                                     File logFile = new File(logFilePath);
                                     String logMessage = "DATE: "+ dateStr + " | " + "TIME: " + timeStr + " | " + "REQUEST TYPE: " + requesttype + " | " + ID + " | " + "STATUS: "+(status ? "success" : "failure");
                                     try {

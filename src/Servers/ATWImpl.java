@@ -148,9 +148,10 @@ public class ATWImpl extends ServerSide.ServerPOA{
         for (Map.Entry<String, Integer> entry : tempMap.entrySet()) {
             listallshows.add(entry.getKey() + " with " + entry.getValue() + " capacity");
         }
-        String sendingrequest = "L"+"ATW"+movieName;
-        byte[] senddata = new byte[1024];
-        senddata = sendingrequest.getBytes();
+        
+        // String sendingrequest = "L"+"ATW"+movieName;
+        // byte[] senddata = new byte[1024];
+        // senddata = sendingrequest.getBytes();
         // //checking other servers
         // try {
             //     InetAddress ip = InetAddress.getLocalHost();
