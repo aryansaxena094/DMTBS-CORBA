@@ -1,141 +1,126 @@
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-15-22 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-12-04 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-15-26 | REQUEST TYPE: VERIFY ID | Admin with ID OUTA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-12-06 | REQUEST TYPE: Switching ID | from: ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-15-28 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-12-07 | REQUEST TYPE: ID Verification | OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-16-16 | REQUEST TYPE: VERIFY ID | Admin with ID OUTA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-12-09 | REQUEST TYPE: Switching ID | from: OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-21-59 | REQUEST TYPE: VERIFY ID | Admin with ID OUTA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-12-14 | REQUEST TYPE: ID Verification | VERA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-22-02 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-12-16 | REQUEST TYPE: Terminate | ID: VERA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-22-05 | REQUEST TYPE: VERIFY ID | Admin with ID OUTA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-13-29 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-22-08 | REQUEST TYPE: VERIFY ID | Admin with ID VERA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-13-34 | REQUEST TYPE: MovieID verification | ATWA250223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-22-11 | REQUEST TYPE: VERIFY ID | Invalid ID VERM9499 | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-13-38 | REQUEST TYPE: Slot Creation: accessing ATW | AVATAR:ATWA250223 with 1000 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-23-20 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-13-42 | REQUEST TYPE: Switching ID | from: ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-23-24 | REQUEST TYPE: VERIFY ID | Admin with ID OUTA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-13-47 | REQUEST TYPE: ID Verification | OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-23-26 | REQUEST TYPE: VERIFY ID | Admin with ID VERA9499 not found | STATUS: failure
+DATE: 2023-02-22 | TIME: 14-13-58 | REQUEST TYPE: MovieID verification | OUTA250223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 17-23-28 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-04 | REQUEST TYPE: Slot Creation: accessing OUT | AVATAR:OUTA250223 with 999 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-12-45 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-32 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-12-51 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA230223 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-38 | REQUEST TYPE: MovieID verification | ATWA250223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-12-54 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA230223 with 99 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-41 | REQUEST TYPE: Slot Creation: accessing ATW | AVATAR:ATWA250223 with 1000 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-24-55 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-42 | REQUEST TYPE: Switching ID | from: ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-24-59 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA230223 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-45 | REQUEST TYPE: ID Verification | OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 19-25-02 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA230223 with 899 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-50 | REQUEST TYPE: MovieID verification | OUTA250223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-05-52 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-53 | REQUEST TYPE: Slot Creation: accessing OUT | AVATAR:OUTA250223 with 999 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-05-57 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA230223 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-54 | REQUEST TYPE: Switching ID | from: OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-06-03 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA230223 with 9499 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 14-14-57 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-06-05 | REQUEST TYPE: LISTING SHOWS: | AVATAR | STATUS: success
+DATE: 2023-02-22 | TIME: 14-15-00 | REQUEST TYPE: Accessing movie slots: ATW | AVATAR | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-10-18 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-15-42 | REQUEST TYPE: Accessing movie slots: ATW | AVATAR | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-10-22 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA230223 | STATUS: success
+DATE: 2023-02-22 | TIME: 14-16-22 | REQUEST TYPE: Switching ID | from: ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-10-25 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA230223 with 1000 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 14-16-26 | REQUEST TYPE: ID Verification | OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-35-08 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-12 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-35-13 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA230223 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-30 | REQUEST TYPE: MovieID verification | ATWA240223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-21 | TIME: 20-35-16 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA230223 with 1000 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-33 | REQUEST TYPE: Slot Creation: accessing ATW | AVATAR:ATWA240223 with 1000 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-12-04 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-34 | REQUEST TYPE: Switching ID | from: ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-13-29 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-35 | REQUEST TYPE: ID Verification | OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-13-34 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA250223 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-47 | REQUEST TYPE: MovieID verification | OUTA250223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-13-38 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA250223 with 1000 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-51 | REQUEST TYPE: Slot Creation: accessing OUT | AVATAR:OUTA250223 with 999 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-14-32 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-57-56 | REQUEST TYPE: Accessing movie slots: OUT | AVATAR | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-14-38 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA250223 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-00 | REQUEST TYPE: Switching ID | from: OUTA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-14-41 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA250223 with 1000 capacity | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-02 | REQUEST TYPE: ID Verification | VERA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-14-57 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-09 | REQUEST TYPE: MovieID verification | VERA230223 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-15-00 | REQUEST TYPE: LISTING SHOWS: | AVATAR | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-14 | REQUEST TYPE: Slot Creation: accessing VER | AVATAR:VERA230223 with 888 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 14-15-42 | REQUEST TYPE: LISTING SHOWS: | AVATAR | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-17 | REQUEST TYPE: Accessing movie slots: VER | AVATAR | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-57-12 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-21 | REQUEST TYPE: Switching ID | from: VERA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-57-22 | REQUEST TYPE: VERIFY MOVIE ID | You can only access tickets for dates within the next 7 days from today. | STATUS: failure
+DATE: 2023-02-22 | TIME: 15-58-25 | REQUEST TYPE: ID Verification | ATWA9499 | STATUS: success
 _________________________________________________________________________________________
 _________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-57-30 | REQUEST TYPE: VERIFY MOVIE ID | Valid movie ID: ATWA240223 | STATUS: success
-_________________________________________________________________________________________
-_________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-57-33 | REQUEST TYPE: ADDING MOVIE SLOT:  | AVATAR : ATWA240223 with 1000 capacity | STATUS: success
-_________________________________________________________________________________________
-_________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-57-56 | REQUEST TYPE: SEND PACKET SERVER TO SERVER(UDP) | Atwater : [ATWA240223 with 1000 capacity] | STATUS: success
-_________________________________________________________________________________________
-_________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-58-17 | REQUEST TYPE: SEND PACKET SERVER TO SERVER(UDP) | Atwater : [ATWA240223 with 1000 capacity] | STATUS: success
-_________________________________________________________________________________________
-_________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-58-25 | REQUEST TYPE: VERIFY ID | Welcome Admin with ID ATWA9499 | STATUS: success
-_________________________________________________________________________________________
-_________________________________________________________________________________________
-DATE: 2023-02-22 | TIME: 15-58-29 | REQUEST TYPE: LISTING SHOWS: | AVATAR | STATUS: success
+DATE: 2023-02-22 | TIME: 15-58-29 | REQUEST TYPE: Accessing movie slots: ATW | AVATAR | STATUS: success
 _________________________________________________________________________________________

@@ -162,9 +162,9 @@ public class OUTImpl extends ServerSide.ServerPOA{
             InetAddress ip = InetAddress.getLocalHost();
             DatagramSocket sendingrequesttoserv1 = new DatagramSocket();
             byte[] receivedataserv1 = new byte[1024];
-            DatagramPacket sendreqtorserv1 = new DatagramPacket(senddata, senddata.length, ip, OUT_ALONP);
+            DatagramPacket sendreqtorserv1 = new DatagramPacket(senddata, senddata.length, ip, ATW_ALONP);
             sendingrequesttoserv1.send(sendreqtorserv1);
-            DatagramSocket gettingdatafromserv1 = new DatagramSocket(ATW_DATA);
+            DatagramSocket gettingdatafromserv1 = new DatagramSocket(OUT_DATA);
             DatagramPacket packetfromserv1 = null;
             String recvdata = "";
             while(recvdata.isEmpty()){
@@ -185,7 +185,7 @@ public class OUTImpl extends ServerSide.ServerPOA{
             byte[] receivedataserv2 = new byte[1024];
             DatagramPacket sendreqtorserv2 = new DatagramPacket(senddata, senddata.length, ip, VER_ALONP);
             sendingrequesttoserv2.send(sendreqtorserv2);
-            DatagramSocket gettingdatafromserv2 = new DatagramSocket(ATW_DATA);
+            DatagramSocket gettingdatafromserv2 = new DatagramSocket(OUT_DATA);
             DatagramPacket packetfromserv2 = null;
             String recvdata = "";
             while(recvdata.isEmpty()){

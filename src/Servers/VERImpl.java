@@ -163,7 +163,7 @@ public class VERImpl extends ServerSide.ServerPOA{
             byte[] receivedataserv1 = new byte[1024];
             DatagramPacket sendreqtorserv1 = new DatagramPacket(senddata, senddata.length, ip, OUT_ALONP);
             sendingrequesttoserv1.send(sendreqtorserv1);
-            DatagramSocket gettingdatafromserv1 = new DatagramSocket(ATW_DATA);
+            DatagramSocket gettingdatafromserv1 = new DatagramSocket(VER_DATA);
             DatagramPacket packetfromserv1 = null;
             String recvdata = "";
             while(recvdata.isEmpty()){
@@ -182,9 +182,9 @@ public class VERImpl extends ServerSide.ServerPOA{
             InetAddress ip = InetAddress.getLocalHost();
             DatagramSocket sendingrequesttoserv2 = new DatagramSocket();
             byte[] receivedataserv2 = new byte[1024];
-            DatagramPacket sendreqtorserv2 = new DatagramPacket(senddata, senddata.length, ip, VER_ALONP);
+            DatagramPacket sendreqtorserv2 = new DatagramPacket(senddata, senddata.length, ip, ATW_ALONP);
             sendingrequesttoserv2.send(sendreqtorserv2);
-            DatagramSocket gettingdatafromserv2 = new DatagramSocket(ATW_DATA);
+            DatagramSocket gettingdatafromserv2 = new DatagramSocket(VER_DATA);
             DatagramPacket packetfromserv2 = null;
             String recvdata = "";
             while(recvdata.isEmpty()){
