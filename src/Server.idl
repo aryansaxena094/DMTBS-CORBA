@@ -14,5 +14,7 @@ module ServerSide{
      string cancelMovieTickets(in string CustomerID, in string movieID , in string movieName, in long Numberoftickets);
 
      void serverlogwriter(in string requesttype, in string ID, in boolean status);
+     string exchangeTickets(in string customerID, in string movieID, in string movieName, in string new_movieID, in string new_movieName, in long numberOfTickets);
+     void bookingservertoserver(in string data);
      };
 };

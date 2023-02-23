@@ -72,6 +72,9 @@ public class VERserv {
                         String requestfromserver = received.substring(1,4);
                         serv3.listMovieServertoServer(curmoviename,requestfromserver);
                     }
+                    if(received.charAt(0)=='B' || received.charAt(0)=='b'){
+                        serv3.bookingservertoserver(received);
+                    }
                 }
             } 
             

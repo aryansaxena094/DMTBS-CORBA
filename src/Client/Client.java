@@ -46,7 +46,8 @@ public class Client {
     System.out.println("2. Get Booking Schedule");
     System.out.println("3. Cancel Movie Tickets");
     System.out.println("4. Use Different ID");
-    System.out.println("5. EXIT \r\n");
+    System.out.println("5. Exchange Movie Ticket");
+    System.out.println("6. EXIT \r\n");
   }
   
   public static void main(String[] args) {
@@ -56,15 +57,15 @@ public class Client {
     
     try {
       ORB orb = ORB.init(args, null);
-
+      
       org.omg.CORBA.Object ATWref = orb.resolve_initial_references("NameService");
       NamingContextExt ref1 = NamingContextExtHelper.narrow(ATWref);
       Server servATW = ServerHelper.narrow(ref1.resolve_str("ATW"));
-
+      
       org.omg.CORBA.Object VERref = orb.resolve_initial_references("NameService");
       NamingContextExt ref2 = NamingContextExtHelper.narrow(VERref);
       Server servVER = ServerHelper.narrow(ref2.resolve_str("VER"));
-
+      
       org.omg.CORBA.Object OUTref = orb.resolve_initial_references("NameService");
       NamingContextExt ref3 = NamingContextExtHelper.narrow(OUTref);
       Server servOUT = ServerHelper.narrow(ref3.resolve_str("OUT"));
@@ -295,12 +296,13 @@ public class Client {
               default: break;
             }
           }
+          
           else if(verification.equalsIgnoreCase("Welcome Customer!"))
           {//customer menu
+            
             customermenu(ID);
             int menuinp = Integer.parseInt(sc.nextLine());
             // String whichcustomer = ID.substring(0,3);
-            
             
             switch(menuinp){
               case 1:{
@@ -309,7 +311,6 @@ public class Client {
                 
                 System.out.println("Name of the Movie: ");
                 movieName = sc.nextLine();
-                
                 
                 // System.out.println("NOTE: YOU CAN ONLY BOOK 3 TICKETS IN SERVERS OTHER THAN YOUR OWN: "+whichcustomer);
                 
@@ -428,6 +429,78 @@ public class Client {
                 break user;
               }
               case 5: {
+                //Exchanging Ticket
+                //Needed: String customerID, String movieID, String movieName , String new_movieID, String new_movieName, int numberOfTickets
+                movieName = "";
+                movieID = "";
+                String new_movieID = "";
+                String new_movieName = "";
+                int numberOfTickets = 0;
+                //Taking INPUT from the user
+                
+                //Name of the movie
+                System.out.println("Name of the Movie booked");
+                movieName = sc.nextLine();
+                String movieidverification = "";
+                //movieID
+                while(!movieidverification.equalsIgnoreCase("Valid")){
+                  System.out.println(movieidverification);
+                  System.out.println("MovieID: ");
+                  movieID = sc.nextLine();
+                  if(movieID.substring(0, 3).equalsIgnoreCase("ATW")){
+                    movieidverification = servATW.verifyMovieID(movieID);
+                  }
+                  else if(movieID.substring(0, 3).equalsIgnoreCase("VER")){
+                    movieidverification = servVER.verifyMovieID(movieID);
+                  }
+                  else if(movieID.substring(0, 3).equalsIgnoreCase("OUT")){
+                    movieidverification = servOUT.verifyMovieID(movieID);
+                  }
+                }
+                clientlogwrtier("MovieID verification", movieID, true);
+                
+                //Getting the new movie name
+                System.out.println("Enter the name of the movie you wish to exchange your ticket with: ");
+                new_movieName = sc.nextLine();
+                
+
+                movieidverification = "";
+                //New Movie ID
+                while(!movieidverification.equalsIgnoreCase("Valid")){
+                  System.out.println(movieidverification);
+                  System.out.println("Enter the new movieID you wish to exchange your tickets with: ");
+                  new_movieID = sc.nextLine();
+                  if(movieID.substring(0, 3).equalsIgnoreCase("ATW")){
+                    movieidverification = servATW.verifyMovieID(new_movieID);
+                  }
+                  else if(movieID.substring(0, 3).equalsIgnoreCase("VER")){
+                    movieidverification = servVER.verifyMovieID(new_movieID);
+                  }
+                  else if(movieID.substring(0, 3).equalsIgnoreCase("OUT")){
+                    movieidverification = servOUT.verifyMovieID(new_movieID);
+                  }
+                }
+
+                //getting the number of tickets
+                System.out.println("Enter the number of tickets you wish to book: ");
+                numberOfTickets = Integer.parseInt(sc.nextLine());
+                
+                //sending request
+                if(movieID.substring(0, 3).equalsIgnoreCase("ATW")){
+                  System.out.println(servATW.exchangeTickets(ID, movieID, movieName, new_movieID, new_movieName, numberOfTickets));
+                  clientlogwrtier("Accessing ATW: Ticket exchange", "CustomerID: "+ID+" : "+movieName+":"+movieID+": EXCHANGING : "+new_movieName+":"+new_movieID+":"+numberOfTickets, true);
+                }
+                else if(movieID.substring(0, 3).equalsIgnoreCase("VER")){
+                  System.out.println(servVER.exchangeTickets(ID, movieID, movieName, new_movieID, new_movieName, numberOfTickets));    
+                  clientlogwrtier("Accessing VER: Ticket exchange", "CustomerID: "+ID+" : "+movieName+":"+movieID+": EXCHANGING : "+new_movieName+":"+new_movieID+":"+numberOfTickets, true);
+                }
+                else if(movieID.substring(0, 3).equalsIgnoreCase("OUT")){
+                  System.out.println(servOUT.exchangeTickets(ID, movieID, movieName, new_movieID, new_movieName, numberOfTickets));    
+                  clientlogwrtier("Accessing OUT: Ticket exchange", "CustomerID: "+ID+" : "+movieName+":"+movieID+": EXCHANGING : "+new_movieName+":"+new_movieID+":"+numberOfTickets, true);
+                }
+              }
+              break;
+              case 6: {
                 clientlogwrtier("Terminate","ID: "+ID, true);
                 break program;
               }
@@ -446,6 +519,7 @@ public class Client {
       sc.close();
     } 
   }
+
   public static void clientlogwrtier(String requesttype, String ID, boolean status){
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat timeFormat = new SimpleDateFormat("HH-mm-ss");

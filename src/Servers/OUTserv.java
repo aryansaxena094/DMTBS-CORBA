@@ -71,6 +71,9 @@ public class OUTserv {
                         String requestfromserver = received.substring(1,4);
                         serv2.listMovieServertoServer(curmoviename,requestfromserver);
                     }
+                    if(received.charAt(0)=='B' || received.charAt(0)=='b'){
+                        serv2.bookingservertoserver(received);
+                    }
                 }
             } 
 

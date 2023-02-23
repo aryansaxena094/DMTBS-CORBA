@@ -69,6 +69,9 @@ public class ATWserv {
                         String requestfromserver = received.substring(1,4);
                         serv1.listMovieServertoServer(curmoviename,requestfromserver);
                     }
+                    if(received.charAt(0)=='B' || received.charAt(0)=='b'){
+                        serv1.bookingservertoserver(received);
+                    }
                 }
             }
 

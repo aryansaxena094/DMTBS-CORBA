@@ -22,6 +22,11 @@ public class OUTImpl extends ServerSide.ServerPOA{
     
     //Required DS
     private static String ServerName = "Outremont";
+    private static String ATWServerID = "ATW";
+    private static String VERServerID = "VER";
+    private static String OUTServerID = "OUT";
+
+
     private static ArrayList<String> admin = new ArrayList<String>();
     private static HashMap<String, HashMap<String, Integer>> movies = new HashMap<>();
     private static HashMap<String, HashMap<String, Integer>> customer = new HashMap<>();
@@ -154,7 +159,7 @@ public class OUTImpl extends ServerSide.ServerPOA{
         }
 
         //from here
-        String sendingrequest = "L"+"OUT"+movieName;
+        String sendingrequest = "L"+OUTServerID+movieName;
         byte[] senddata = new byte[1024];
         senddata = sendingrequest.getBytes();
         //checking other servers
@@ -213,7 +218,7 @@ public class OUTImpl extends ServerSide.ServerPOA{
             return "This entered ID is invalid";
         }
         
-        if(!adminID.substring(0,3).equalsIgnoreCase("OUT")){
+        if(!adminID.substring(0,3).equalsIgnoreCase(OUTServerID)){
             serverlogwriter("addadmin", adminID, false);
             return "This admin cannot be created in "+ServerName;
         }
@@ -406,13 +411,13 @@ public class OUTImpl extends ServerSide.ServerPOA{
                 senddata = output.getBytes();
                 InetAddress ip = InetAddress.getLocalHost();
                 DatagramSocket toserv = new DatagramSocket();
-                if(serverrequest.equalsIgnoreCase("ATW"))
+                if(serverrequest.equalsIgnoreCase(ATWServerID))
                 {
                     DatagramPacket sendpacket = new DatagramPacket(senddata, senddata.length, ip, ATW_DATA);
                     toserv.send(sendpacket);
                     sendPacketStatus = true;
                 }
-                else if(serverrequest.equalsIgnoreCase("VER"))
+                else if(serverrequest.equalsIgnoreCase(VERServerID))
                 {
                     DatagramPacket sendpacket = new DatagramPacket(senddata, senddata.length, ip, VER_DATA);
                     toserv.send(sendpacket);
@@ -427,6 +432,134 @@ public class OUTImpl extends ServerSide.ServerPOA{
             }
         }
         
+        public String exchangeTickets(String customerID, String movieID, String movieName , String new_movieID, String new_movieName, int numberOfTickets){
+            //Checking if the booking exists
+            if(!customer.containsKey(customerID)){
+                return "customer has not booked any tickets yet";
+            }
+
+            HashMap<String, Integer> temp = customer.get(customerID);
+
+            //checking if this movie and this movie ID has been booked
+            if(!temp.containsKey(movieName+":"+movieID)){
+                return "Movie Name/Movie ID is not booked!";
+            }
+
+            //ticket check
+            int ticketsbooked = temp.get(movieName+":"+movieID);
+
+            if(ticketsbooked<numberOfTickets){
+                return "Tickets booked are lesser then the number of tickets being exchanged";
+            }
+            
+            //All checks are done
+            //Now checking where to send the UDP request
+            
+            String desiredserver = new_movieID.substring(0,3);
+            
+            if(desiredserver.equals(OUTServerID)){
+                String tryingtobook = bookMovieTicket(customerID, new_movieID, new_movieName, numberOfTickets);
+                if(tryingtobook.equals(numberOfTickets+ " Tickets have been booked to "+new_movieID+" show of "+new_movieName))
+                {
+                    cancelMovieTickets(customerID, movieID, movieName, numberOfTickets);
+                    return tryingtobook;
+                }
+                //current server
+                return "";
+            }
+
+            //if not current server
+            String tosend = "B" + ":" + OUTServerID + ":" + customerID + ":" + new_movieName + ":" + new_movieID + ":" + numberOfTickets;
+            byte[] senddata = new byte[1024];
+            senddata = tosend.getBytes();
+
+            if(desiredserver.equals(ATWServerID)){
+                //Serv1
+                try {
+                    InetAddress ip = InetAddress.getLocalHost();
+                    DatagramSocket sendingrequesttoserv1 = new DatagramSocket();
+                    byte[] receivedataserv1 = new byte[1024];
+                    DatagramPacket sendreqtorserv1 = new DatagramPacket(senddata, senddata.length, ip, ATW_ALONP);
+                    sendingrequesttoserv1.send(sendreqtorserv1);
+                    DatagramSocket gettingdatafromserv1 = new DatagramSocket(OUT_DATA);
+                    DatagramPacket packetfromserv1 = null;
+                    String recvdata = "";
+                    while(recvdata.isEmpty()){
+                        packetfromserv1 = new DatagramPacket(receivedataserv1, receivedataserv1.length);
+                        gettingdatafromserv1.receive(packetfromserv1);
+                        recvdata = new String(packetfromserv1.getData(), 0, packetfromserv1.getLength(), StandardCharsets.UTF_8);
+                    }
+                    gettingdatafromserv1.close();
+                    sendingrequesttoserv1.close();
+                    return recvdata;
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(desiredserver.equals(VERServerID)){
+                //Serv2
+                try {
+                    InetAddress ip = InetAddress.getLocalHost();
+                    DatagramSocket sendingrequesttoserv2 = new DatagramSocket();
+                    byte[] receivedataserv2 = new byte[1024];
+                    DatagramPacket sendreqtorserv2 = new DatagramPacket(senddata, senddata.length, ip, VER_ALONP);
+                    sendingrequesttoserv2.send(sendreqtorserv2);
+                    DatagramSocket gettingdatafromserv2 = new DatagramSocket(OUT_DATA);
+                    DatagramPacket packetfromserv2 = null;
+                    String recvdata = "";
+                    while(recvdata.isEmpty()){
+                        packetfromserv2 = new DatagramPacket(receivedataserv2, receivedataserv2.length);
+                        gettingdatafromserv2.receive(packetfromserv2);
+                        recvdata = new String(packetfromserv2.getData(), 0, packetfromserv2.getLength(), StandardCharsets.UTF_8);
+                    }
+                    gettingdatafromserv2.close();
+                    sendingrequesttoserv2.close();
+                    return recvdata;
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return "INVALID";
+        }
+
+        public void bookingservertoserver(String data){
+            //implement UDP functionalities
+            String decode[] = data.split(":");
+            // "B" + ":" + ServerID + ":" + customerID + ":" + new_movieName + ":" + new_movieID + ":" + numberOfTickets;
+            String serverrequest = decode[1];
+            String CustomerID = decode[2];
+            String movieName = decode[3];
+            String movieID = decode[4];
+            int numberoftickets = Integer.parseInt(decode[5]);
+            String revert = bookMovieTicket(CustomerID, movieID, movieName, numberoftickets);
+            byte[] senddata = new byte[1024];
+            senddata = revert.getBytes();
+            boolean sendPacketStatus = false;
+            try {
+                InetAddress ip = InetAddress.getLocalHost();
+                DatagramSocket toserv = new DatagramSocket();
+                if(serverrequest.equalsIgnoreCase(ATWServerID))
+                {
+                    DatagramPacket sendpacket = new DatagramPacket(senddata, senddata.length, ip, ATW_DATA);
+                    toserv.send(sendpacket);
+                    sendPacketStatus = true;
+                }
+                else if(serverrequest.equalsIgnoreCase(VERServerID))
+                {
+                    DatagramPacket sendpacket = new DatagramPacket(senddata, senddata.length, ip, VER_DATA);
+                    toserv.send(sendpacket);
+                    sendPacketStatus = true;
+                }
+                toserv.close();
+            } catch (Exception e) {
+                sendPacketStatus = false;
+            }
+            finally{
+                serverlogwriter("SEND PACKET SERVER TO SERVER(UDP)", revert, sendPacketStatus);
+            }
+        }
         
         
     }
