@@ -488,6 +488,11 @@ public class ATWImpl extends ServerSide.ServerPOA{
                     }
                     gettingdatafromserv1.close();
                     sendingrequesttoserv1.close();
+
+                    if(recvdata.contains("booked")){
+                        cancelMovieTickets(customerID, movieID, movieName, numberOfTickets);
+                    }
+                    
                     return recvdata;
                 }
                 catch (Exception e) {
@@ -512,6 +517,11 @@ public class ATWImpl extends ServerSide.ServerPOA{
                     }
                     gettingdatafromserv2.close();
                     sendingrequesttoserv2.close();
+
+                    if(recvdata.contains("booked")){
+                        cancelMovieTickets(customerID, movieID, movieName, numberOfTickets);
+                    }
+
                     return recvdata;
 
                 } catch (Exception e) {
