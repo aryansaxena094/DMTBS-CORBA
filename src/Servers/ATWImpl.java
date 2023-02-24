@@ -156,7 +156,7 @@ public class ATWImpl extends ServerSide.ServerPOA{
         }
         //from here
         
-        String sendingrequest = "L"+"ATW"+movieName;
+        String sendingrequest = "L"+ATWServerID+movieName;
         byte[] senddata = new byte[1024];
         senddata = sendingrequest.getBytes();
         //checking other servers
@@ -216,7 +216,7 @@ public class ATWImpl extends ServerSide.ServerPOA{
             return "This entered ID is invalid";
         }
         
-        if(!adminID.substring(0,3).equalsIgnoreCase("ATW")){
+        if(!adminID.substring(0,3).equalsIgnoreCase(ATWServerID)){
             serverlogwriter("addadmin", adminID, false);
             return "This admin cannot be created in "+ServerName;
         }

@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-
 import org.omg.CORBA.ORB;
 import org.omg.CosNaming.NamingContextExt;
 import org.omg.CosNaming.NamingContextExtHelper;
@@ -468,7 +467,7 @@ public class Client {
                 //New Movie ID
                 while(!movieidverification.equalsIgnoreCase("Valid")){
                   System.out.println(movieidverification);
-                  System.out.println("Enter the new movieID you wish to exchange your tickets with: ");
+                  System.out.println("Enter the new movie ID you wish to exchange your tickets with: ");
                   new_movieID = sc.nextLine();
                   if(movieID.substring(0, 3).equalsIgnoreCase("ATW")){
                     movieidverification = servATW.verifyMovieID(new_movieID);

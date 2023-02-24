@@ -158,7 +158,7 @@ public class VERImpl extends ServerSide.ServerPOA{
         
         //from here
         
-        String sendingrequest = "L"+"VER"+movieName;
+        String sendingrequest = "L"+VERServerID+movieName;
         byte[] senddata = new byte[1024];
         senddata = sendingrequest.getBytes();
         //checking other servers
@@ -217,7 +217,7 @@ public class VERImpl extends ServerSide.ServerPOA{
             return "This entered ID is invalid";
         }
         
-        if(!adminID.substring(0,3).equalsIgnoreCase("VER")){
+        if(!adminID.substring(0,3).equalsIgnoreCase(VERServerID)){
             serverlogwriter("addadmin", adminID, false);
             return "This admin cannot be created in "+ServerName;
         }
